@@ -1,0 +1,1 @@
+{"name":"evergreen-hans","private":true,"scripts":{"build":"node build.js","serve":"npx serve ."}}
