@@ -93,4 +93,76 @@ $(function () {
   $(document).on('click', 'a[href^="tel:"]', function () { track('phone_click'); })
     .on('click', 'a[href^="mailto:"]', function () { track('email_click'); })
     .on('click', 'a[href*="wa.me"]', function () { track('whatsapp_click'); });
+
+    (function () {
+  var nav = document.querySelector('.legal-nav');
+  if (!nav) return;
+
+  var links = Array.prototype.slice.call(nav.querySelectorAll('a[href^="#"]'));
+  if (!links.length) return;
+
+  var targets = links.map(function (a) {
+    return document.getElementById(a.getAttribute('href').slice(1));
+  });
+
+  var OFFSET = 140;        // jarak pemicu di bawah navbar
+  var current = -1;
+  var ticking = false;
+
+  function update() {
+    ticking = false;
+
+    var y = window.pageYOffset + OFFSET;
+    var idx = 0;
+
+    for (var i = 0; i < targets.length; i++) {
+      var el = targets[i];
+      if (el && el.getBoundingClientRect().top + window.pageYOffset <= y) idx = i;
+    }
+    // jika sudah di dasar halaman, paksa item terakhir aktif
+    if (window.innerHeight + window.pageYOffset >= document.documentElement.scrollHeight - 2) {
+      idx = targets.length - 1;
+    }
+
+    if (idx === current) return;
+    current = idx;
+
+    links.forEach(function (a, i) {
+      var on = i === idx;
+      a.classList.toggle('on', on);
+      if (on) { a.setAttribute('aria-current', 'true'); }
+      else { a.removeAttribute('aria-current'); }
+    });
+
+    // jaga agar item aktif tetap terlihat di nav yang bisa di-scroll
+    if (nav.scrollHeight > nav.clientHeight + 4) {
+      var a = links[idx];
+      nav.scrollTop = a.offsetTop - nav.clientHeight / 2 + a.offsetHeight / 2;
+    }
+  }
+
+  function onScroll() {
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  update();
+
+  // tombol lipat untuk mobile
+  var btn = nav.querySelector('.legal-nav-t');
+  if (btn) {
+    btn.addEventListener('click', function () {
+      var open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+  links.forEach(function (a) {
+    a.addEventListener('click', function () {
+      nav.classList.remove('open');
+      if (btn) btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
 });
+

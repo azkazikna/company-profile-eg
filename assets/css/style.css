@@ -805,27 +805,122 @@ a {
 .ind .arr{display:inline-block;margin-top:.7rem;color:var(--lime);font-weight:700;opacity:0;transform:translateX(-8px);transition:opacity .3s,transform .3s}
 .ind:hover .ph{transform:scale(1.07)}.ind:hover .arr{opacity:1;transform:none}
 @media(hover:none){.ind .arr{opacity:1;transform:none}}
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation: none !important;
-    transition: none !important;
-    scroll-behavior: auto !important;
+
+/* halaman legal */
+.legal{max-width:46rem}
+.legal h2{font-size:1.4rem;letter-spacing:-.01em;margin:2.5rem 0 .8rem}
+.legal p,.legal li{color:#33443e}
+.legal ul{padding-left:1.2rem}.legal li{margin:.35rem 0}
+.legal mark{background:var(--lime);color:var(--deep);padding:0 .3rem;border-radius:4px}
+
+/* ===== halaman legal: sidebar daftar isi ===== */
+.legal-wrap {
+  display: grid;
+  grid-template-columns: 15rem minmax(0, 46rem);
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: start;
+}
+
+.legal-nav {
+  position: sticky;
+  top: 6rem;                 /* sesuaikan tinggi navbar */
+  align-self: start;
+  max-height: calc(100vh - 8rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--sage) transparent;
+  padding-right: .5rem;
+}
+.legal-nav::-webkit-scrollbar { width: 4px; }
+.legal-nav::-webkit-scrollbar-thumb { background: var(--sage); border-radius: 4px; }
+
+.legal-nav h2 {
+  font-size: .72rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--ev);
+  font-weight: 700;
+  margin: 0 0 1rem;
+  padding-left: 1rem;
+}
+.legal-nav-t { display: none; }   /* tombol hanya muncul di mobile */
+
+.legal-nav ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-left: 2px solid var(--line);
+  counter-reset: toc;
+}
+.legal-nav li { counter-increment: toc; }
+.legal-nav a {
+  position: relative;
+  display: block;
+  margin-left: -2px;               /* menimpa garis track */
+  padding: .42rem .6rem .42rem 1rem;
+  border-left: 2px solid transparent;
+  font-size: .875rem;
+  line-height: 1.4;
+  color: #5b6d66;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color .25s, border-color .25s, background .25s;
+}
+.legal-nav a::before {
+  content: counter(toc) ".";
+  margin-right: .45rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--sage);
+  transition: color .25s;
+}
+.legal-nav a:hover { color: var(--ev); border-left-color: var(--sage); }
+.legal-nav a.on {
+  color: var(--deep);
+  font-weight: 700;
+  border-left-color: var(--ev);
+  background: linear-gradient(90deg, rgba(199, 221, 184, .38), transparent 88%);
+}
+.legal-nav a.on::before { color: var(--ev); }
+
+/* judul tidak tertutup navbar saat diklik dari daftar isi */
+.legal h2 { scroll-margin-top: 7rem; }
+
+/* ===== mobile: nav jadi panel lipat ===== */
+@media (max-width: 991px) {
+  .legal-wrap { grid-template-columns: 1fr; gap: 1.5rem; }
+  .legal-nav {
+    position: static;
+    max-height: none;
+    overflow: visible;
+    padding: 0 1rem;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 14px;
   }
-  .js .rv {
-    opacity: 1;
-    transform: none;
+  .legal-nav h2 { display: none; }
+  .legal-nav-t {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 0;
+    background: none;
+    border: 0;
+    font: inherit;
+    font-weight: 700;
+    color: var(--deep);
+    cursor: pointer;
+    text-align: left;
   }
-  .hero-line path {
-    stroke-dashoffset: 0;
-  }
-  .marq-t {
-    animation: none;
-  }
-  .marq {
-    overflow-x: auto;
-  }
+  .legal-nav-t span { color: var(--ev); transition: transform .3s; }
+  .legal-nav.open .legal-nav-t span { transform: rotate(180deg); }
+  .legal-nav ol { display: none; border-left: 0; padding-bottom: .9rem; }
+  .legal-nav.open ol { display: block; }
+  .legal-nav a { margin-left: 0; border-left: 0; padding-left: .2rem; }
+  .legal-nav a.on { background: none; }
 }
 
 /* mobile menu fix: offcanvas-lg needs its own vars; backdrop-filter would trap the fixed panel */
