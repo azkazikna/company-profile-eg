@@ -150,6 +150,10 @@ a {
   color: var(--lime);
   margin-left: 0.3em;
 }
+.navbar-brand img {
+  height: 2.6rem;
+  width: auto;
+}
 .eh-nav .nav-link {
   color: #e6efe9;
   font-weight: 500;
@@ -533,8 +537,8 @@ a {
   background: #fff;
   font-weight: 700;
   color: var(--deep);
-  filter: grayscale(1);
-  opacity: 0.65;
+  /* filter: grayscale(1); */
+  /* opacity: 0.65; */
   transition:
     filter 0.35s,
     opacity 0.35s,
@@ -725,6 +729,10 @@ a {
   color: #fff;
   font-weight: 700;
   line-height: 1.2;
+}
+.foot .big img {
+  height: 2.6rem;
+  width: auto;
 }
 .crumb {
   font-size: 0.85rem;
@@ -921,6 +929,133 @@ a {
   .legal-nav.open ol { display: block; }
   .legal-nav a { margin-left: 0; border-left: 0; padding-left: .2rem; }
   .legal-nav a.on { background: none; }
+}
+
+/* ===== about: daftar bidang konsultasi ===== */
+.bd-lead {
+  max-width: 46rem;
+  font-size: 1.05rem;
+  color: #cfe0d7;
+}
+
+/* baris judul kolom (desktop) */
+.bd-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr) minmax(0, 1.05fr);
+  gap: clamp(1rem, 3vw, 2.5rem);
+  padding: .85rem 0 .85rem 1.15rem;
+  border-top: 1px solid rgba(255, 255, 255, .22);
+  border-bottom: 1px solid rgba(255, 255, 255, .22);
+  font-size: .72rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--lime);
+}
+
+.bd {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.bd-i {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr) minmax(0, 1.05fr);
+  gap: clamp(1rem, 3vw, 2.5rem);
+  padding: clamp(1.5rem, 3vw, 2.1rem) 0 clamp(1.5rem, 3vw, 2.1rem) 1.15rem;
+  border-bottom: 1px solid rgba(255, 255, 255, .14);
+  transition: background .35s;
+}
+/* garis aksen yang tumbuh saat hover */
+.bd-i::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--lime);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform .45s cubic-bezier(.2, .7, .2, 1);
+}
+.bd-i:hover {
+  background: linear-gradient(90deg, rgba(199, 221, 184, .07), transparent 72%);
+}
+.bd-i:hover::before { transform: scaleY(1); }
+
+.bd-n {
+  display: block;
+  margin-bottom: .5rem;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  font-variant-numeric: tabular-nums;
+  color: var(--lime);
+  transition: letter-spacing .35s;
+}
+.bd-i:hover .bd-n { letter-spacing: .26em; }
+
+.bd-t h3 {
+  margin: 0;
+  font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+  color: #fff;
+}
+
+.bd-s,
+.bd-b { min-width: 0; }
+
+.bd-s p,
+.bd-b p {
+  margin: 0;
+  font-size: .97rem;
+  line-height: 1.6;
+}
+
+.bd-s p { color: #cfe0d7; }
+
+/* manfaat = payoff, jadi lebih terang + tanda centang */
+.bd-b p {
+  color: #eef4f0;
+  padding-left: 1.35rem;
+  position: relative;
+}
+.bd-b p::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--lime);
+  font-weight: 700;
+}
+
+/* label kolom yang hanya muncul di mobile */
+.bd-m { display: none; }
+
+.bd-act {
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+/* ===== responsif ===== */
+@media (max-width: 991px) {
+  .bd-head { display: none; }
+  .bd-i {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1.7rem 0 1.7rem 1.15rem;
+  }
+  .bd-m {
+    display: block;
+    margin-bottom: .4rem;
+    font-size: .68rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--sage);
+  }
+  .bd-s p { padding-left: 0; }
 }
 
 /* mobile menu fix: offcanvas-lg needs its own vars; backdrop-filter would trap the fixed panel */
