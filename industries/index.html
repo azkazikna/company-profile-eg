@@ -25,9 +25,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet">
     <script
-        type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"PT Evergreen Hans","alternateName":["Evergreen Hans","Evergreenhans","EG Hans"],"url":"https://www.eghans.com","logo":"https://www.eghans.com/assets/img/logo.png"},{"@type":"WebSite","name":"PT Evergreen Hans","url":"https://www.eghans.com"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Beranda","item":"https://www.eghans.com/"},{"@type":"ListItem","position":2,"name":"Industri","item":"https://www.eghans.com/industries"}]}]}</script>
+        type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"PT Evergreen Hans","alternateName":["Evergreen Hans","Evergreenhans","EG Hans"],"url":"https://www.eghans.com","logo":"https://www.eghans.com/assets/img/logo.webp"},{"@type":"WebSite","name":"PT Evergreen Hans","url":"https://www.eghans.com"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Beranda","item":"https://www.eghans.com/"},{"@type":"ListItem","position":2,"name":"Industri","item":"https://www.eghans.com/industries"}]}]}</script>
     <!-- GA4: ganti G-XXXXXXXXXX -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments) } gtag('js', new Date()); gtag('config', 'G-XXXXXXXXXX');</script>
@@ -47,6 +47,7 @@
                     <ul class="navbar-nav ms-auto me-lg-3">
                         <li class="nav-item"><a class="nav-link" href="/">Beranda</a></li>
                         <li class="nav-item"><a class="nav-link" href="/about">Tentang</a></li>
+
                         <li class="nav-item"><a class="nav-link" href="/services">Layanan</a></li>
                         <li class="nav-item"><a class="nav-link" href="/industries">Industri</a></li>
                         <li class="nav-item"><a class="nav-link" href="/clients">Klien</a></li>
@@ -59,7 +60,7 @@
         </div>
     </nav>
     <header class="hero hero-s">
-        <div class="hero-img"><img class="ph" src="/assets/img/eg/hero-port-industries.png"
+        <div class="hero-img"><img class="ph" src="/assets/img/eg/hero-port-industries.webp"
                 alt="Industries evergreen hans" width="1400" height="924" loading="eager" fetchpriority="high"
                 decoding="async" onerror="this.remove()"></div>
         <div class="grid-bg"></div>
@@ -71,57 +72,231 @@
         </div>
     </header>
     <main id="main">
-        <section class="sec">
+
+        <section class="sec" style="padding-bottom:1rem">
             <div class="container">
-                <div class="row g-4">
-                    <div class="col-md-6 col-lg-4 rv">
-                        <div class="card-eh">
-                            <h3>Manufacturing</h3>
-                            <p>Solusi keuangan, pajak, dan teknologi yang disesuaikan dengan karakter industri ini.</p>
-                        </div>
+                <div class="row g-5 align-items-end mb-4">
+                    <div class="col-lg-6 rv"><span class="eyebrow">Aplikasi per industri</span>
+                        <h2 class="mt-2">Sistem yang tersedia untuk bisnis Anda</h2>
                     </div>
-                    <div class="col-md-6 col-lg-4 rv">
-                        <div class="card-eh">
-                            <h3>Trading & Distribution</h3>
-                            <p>Solusi keuangan, pajak, dan teknologi yang disesuaikan dengan karakter industri ini.</p>
-                        </div>
+                    <div class="col-lg-6 rv">
+                        <p class="lead2">Aplikasi accounting kami dapat dipakai berbagai industri. Inventory Kawasan
+                            Berikat khusus tersedia untuk perusahaan manufaktur dan garmen.</p>
                     </div>
-                    <div class="col-md-6 col-lg-4 rv">
-                        <div class="card-eh">
-                            <h3>Services</h3>
-                            <p>Solusi keuangan, pajak, dan teknologi yang disesuaikan dengan karakter industri ini.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 rv">
-                        <div class="card-eh">
-                            <h3>Garment & Textile</h3>
-                            <p>Solusi keuangan, pajak, dan teknologi yang disesuaikan dengan karakter industri ini.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 rv">
-                        <div class="card-eh">
-                            <h3>Other Industries</h3>
-                            <p>Solusi keuangan, pajak, dan teknologi yang disesuaikan dengan karakter industri ini.</p>
-                        </div>
-                    </div>
+                </div>
+                <div class="table-responsive rv">
+                    <table class="table align-middle" style="--bs-table-bg:transparent">
+                        <thead>
+                            <tr>
+                                <th>Industri</th>
+                                <th class="text-center">Aplikasi Accounting</th>
+                                <th class="text-center">Inventory Kawasan Berikat</th>
+                            </tr>
+                        </thead>
+                        <tbody style="color:var(--ev);font-weight:700">
+                            <tr>
+                                <td style="color:var(--ink)">Manufacturing</td>
+                                <td class="text-center">✓</td>
+                                <td class="text-center">✓</td>
+                            </tr>
+                            <tr>
+                                <td style="color:var(--ink)">Garment &amp; Textile</td>
+                                <td class="text-center">✓</td>
+                                <td class="text-center">✓</td>
+                            </tr>
+                            <tr>
+                                <td style="color:var(--ink)">Services</td>
+                                <td class="text-center">✓</td>
+                                <td class="text-center"><span class="text-muted">–</span></td>
+                            </tr>
+                            <tr>
+                                <td style="color:var(--ink)">Pertambangan</td>
+                                <td class="text-center">✓</td>
+                                <td class="text-center"><span class="text-muted">–</span></td>
+                            </tr>
+                            <tr>
+                                <td style="color:var(--ink)">Industri lainnya</td>
+                                <td class="text-center">✓</td>
+                                <td class="text-center"><span class="text-muted">–</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </section>
-        <section class="sec dark">
-            <div class="container"><span class="eyebrow">Specialized experience</span>
-                <h2 class="mt-2">Bonded Zone &amp; Customs-Related Operations</h2>
-                <p class="lead2" style="color:#cfe0d7">Pengalaman kami pada perusahaan Kawasan Berikat mencakup
-                    compliance, sistem inventory, dan customs technology sebagai pelengkap keahlian inti kami.</p>
+
+        <section class="sec" style="padding-top:2rem">
+            <div class="container">
+
+                <div class="row g-5 trow rv">
+                    <div class="col-lg-4"><span class="eyebrow">Industri 01</span>
+                        <h3>Manufacturing</h3>
+                        <div class="chips"><span>Accounting</span><span>Inventory Kawasan Berikat</span></div>
+                        <p class="lead2">Pabrik membutuhkan catatan bahan baku, produksi, dan barang jadi yang rapi agar
+                            biaya dan laba per produk terlihat jelas.</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <h4 class="svc-h" style="margin-top:0">Tantangan umum</h4>
+                        <ul class="svc-list" style="columns:1">
+                            <li>Pencatatan bahan baku, barang dalam proses, dan barang jadi</li>
+                            <li>Perhitungan harga pokok produksi</li>
+                            <li>Pemenuhan kewajiban fasilitas Kawasan Berikat</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4">
+                        <h4 class="svc-h" style="margin-top:0">Cara kami membantu</h4>
+                        <ul class="svc-list" style="columns:1">
+                            <li>Aplikasi accounting dan inventory Kawasan Berikat dalam satu sistem</li>
+                            <li>Analisis biaya dan profitabilitas per produk</li>
+                            <li>Laporan manajemen bulanan</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row g-5 trow rv">
+                    <div class="col-lg-4"><span class="eyebrow">Industri 02</span>
+                        <h3>Garment &amp; Textile</h3>
+                        <div class="chips"><span>Accounting</span><span>Inventory Kawasan Berikat</span></div>
+                        <p class="lead2">Banyak perusahaan di sektor ini berorientasi ekspor, dengan bahan baku dan
+                            aksesori yang keluar-masuk dalam jumlah besar.</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <h4 class="svc-h" style="margin-top:0">Tantangan umum</h4>
+                        <ul class="svc-list" style="columns:1">
+                            <li>Mutasi bahan dan aksesori yang harus tertelusur</li>
+                            <li>Margin yang menuntut kontrol biaya ketat</li>
+                            <li>Laporan pertanggungjawaban Kawasan Berikat</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4">
+                        <h4 class="svc-h" style="margin-top:0">Cara kami membantu</h4>
+                        <ul class="svc-list" style="columns:1">
+                            <li>Inventory Kawasan Berikat yang menyatu dengan accounting</li>
+                            <li>Analisis biaya dan arus kas</li>
+                            <li>Pendampingan pelaporan pajak</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row g-5 trow rv">
+                    <div class="col-lg-4"><span class="eyebrow">Industri 03</span>
+                        <h3>Services</h3>
+                        <div class="chips"><span>Accounting</span></div>
+                        <p class="lead2">Bisnis jasa, termasuk logistik dan layanan umum, menjual keahlian dan waktu.
+                            Kontrol biaya dan pelaporan yang jelas menjadi kuncinya.</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <h4 class="svc-h" style="margin-top:0">Tantangan umum</h4>
+                        <ul class="svc-list" style="columns:1">
+                            <li>Pengelolaan biaya tenaga kerja dan operasional</li>
+                            <li>Pencatatan pendapatan per layanan atau kontrak</li>
+                            <li>Laporan yang mudah dibaca pemilik</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4">
+                        <h4 class="svc-h" style="margin-top:0">Cara kami membantu</h4>
+                        <ul class="svc-list" style="columns:1">
+                            <li>Aplikasi accounting dengan laporan keuangan lengkap</li>
+                            <li>Laporan manajemen berkala</li>
+                            <li>Konsultasi keuangan dan pendampingan pajak</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row g-5 trow rv">
+                    <div class="col-lg-4"><span class="eyebrow">Industri 04</span>
+                        <h3>Pertambangan</h3>
+                        <div class="chips"><span>Accounting</span></div>
+                        <p class="lead2">Perusahaan tambang, termasuk batu bara, mengelola biaya dan kontrak dalam skala
+                            besar serta kewajiban pelaporan yang khusus.</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <h4 class="svc-h" style="margin-top:0">Tantangan umum</h4>
+                        <ul class="svc-list" style="columns:1">
+                            <li>Biaya operasional dan kontrak bernilai besar</li>
+                            <li>Kewajiban perpajakan dan pelaporan khusus sektor ini</li>
+                            <li>Laporan keuangan yang akurat untuk pemilik dan pihak eksternal</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4">
+                        <h4 class="svc-h" style="margin-top:0">Cara kami membantu</h4>
+                        <ul class="svc-list" style="columns:1">
+                            <li>Aplikasi accounting dan penyusunan laporan keuangan</li>
+                            <li>Pendampingan kepatuhan dan pelaporan pajak</li>
+                            <li>Laporan manajemen berkala</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row g-5 trow rv">
+                    <div class="col-lg-4"><span class="eyebrow">Industri 05</span>
+                        <h3>Industri Lainnya</h3>
+                        <div class="chips"><span>Accounting</span></div>
+                        <p class="lead2">Termasuk restoran dan usaha lain dengan banyak transaksi harian serta
+                            pencatatan yang perlu dirapikan.</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <h4 class="svc-h" style="margin-top:0">Tantangan umum</h4>
+                        <ul class="svc-list" style="columns:1">
+                            <li>Transaksi harian dalam jumlah banyak</li>
+                            <li>Pengendalian biaya operasional</li>
+                            <li>Pembukuan yang belum tertata</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4">
+                        <h4 class="svc-h" style="margin-top:0">Cara kami membantu</h4>
+                        <ul class="svc-list" style="columns:1">
+                            <li>Aplikasi accounting yang menyusun laporan keuangan</li>
+                            <li>Laporan sederhana yang mudah dipahami pemilik</li>
+                            <li>Konsultasi keuangan dan pajak</li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
         </section>
+
+        <section class="sec tint">
+            <div class="container">
+                <div class="row g-5 align-items-end">
+                    <div class="col-lg-7 rv"><span class="eyebrow">Pengalaman khusus</span>
+                        <h2 class="mt-2">Kawasan Berikat untuk manufaktur dan garmen</h2>
+                    </div>
+                    <div class="col-lg-5 rv">
+                        <p>Kawasan Berikat adalah fasilitas kepabeanan yang dipakai banyak perusahaan manufaktur dan
+                            garmen berorientasi ekspor. Kami menyediakan sistem inventory khusus untuk kebutuhan ini,
+                            terintegrasi dengan accounting.</p>
+                    </div>
+                </div>
+                <div class="stp rv" style="grid-template-columns:repeat(3,1fr)">
+                    <div><b>01</b>
+                        <h3>Pembukuan</h3>
+                        <p>Aplikasi accounting yang menyusun laporan keuangan dari data transaksi.</p>
+                    </div>
+                    <div><b>02</b>
+                        <h3>Persediaan</h3>
+                        <p>Pencatatan pemasukan, pengeluaran, dan mutasi barang Kawasan Berikat dalam satu sistem.</p>
+                    </div>
+                    <div><b>03</b>
+                        <h3>Integrasi CEISA</h3>
+                        <p>Koneksi host-to-host ke CEISA agar data kepabeanan tidak perlu diinput ulang.</p>
+                    </div>
+                </div>
+                <p class="mt-4"><a class="lnk" href="/services/business-technology" style="color:var(--lime)">Lihat
+                        layanan teknologi bisnis <span>→</span></a></p>
+            </div>
+        </section>
+
         <section class="sec cta">
             <div class="container rv">
-                <h2>Let's Talk About Your Business.</h2>
-                <p class="mx-auto my-4" style="max-width:34rem">Ceritakan tantangan Anda. Mari temukan pendekatan yang
-                    tepat bersama.</p><a class="btn-eh magnetic" href="/contact" data-track="final_cta">Start a
-                    Conversation →</a>
+                <h2>Ceritakan industri dan tantangan Anda.</h2>
+                <p class="mx-auto my-4" style="max-width:34rem">Kami akan bantu memetakan layanan dan aplikasi yang
+                    paling relevan untuk bisnis Anda.</p>
+                <a class="btn-eh magnetic" href="/contact" data-track="industries_final_cta">Diskusikan Kebutuhan Anda
+                    →</a>
             </div>
         </section>
+
     </main>
     <footer class="foot">
         <div class="container">
@@ -166,7 +341,7 @@
     </footer>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/js/main.js" defer></script>
+    <script src="/assets/js/main.js" defer></script>
 </body>
 
 </html>

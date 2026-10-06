@@ -68,7 +68,7 @@ $(function () {
   $('.filter-btn').on('click', function () {
     var f = $(this).data('f'); $(this).addClass('on').siblings().removeClass('on');
     var $a = $('.fi').addClass('fade');
-    setTimeout(function () { $a.each(function () { $(this).toggleClass('hide', f !== 'all' && $(this).data('f') !== f); }); setTimeout(function () { $('.fi').removeClass('fade'); }, 30); }, RM ? 0 : 300);
+    setTimeout(function () { $a.each(function () { $(this).toggleClass('hide', f !== 'all' && (' ' + $(this).attr('data-f') + ' ').indexOf(' ' + f + ' ') < 0); }); setTimeout(function () { $('.fi').removeClass('fade'); }, 30); }, RM ? 0 : 300);
   });
   $('#q').on('input', function () { var q = this.value.toLowerCase(); $('.fi').each(function () { $(this).toggleClass('hide', $(this).text().toLowerCase().indexOf(q) < 0); }); });
 
